@@ -39,12 +39,13 @@ class CreateDatabase extends Command
     public function handle()
     {
         $db = $this->argument("db");
+        $password = $this->argument("password");
         $initdbfile = $this->argument("initdbfile");
         $sql = 'CREATE DATABASE '.$db.' DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci';
-        $process = new Process(['mysql','-u future_admin -p', $sql]);
+        $process = new Process(['mysql','-u future_admin', '-p' . $password, '-e\'' . $sql . ';\'']);
         $process->run();
         $sql = $db.' < ' .$initdbfile;
-        $process = new Process(['mysql','-u future_admin -p', $sql]);
+        $process = new Process(['mysql','-u future_admin', '-p' . $password, $sql]);
         $process->run();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Symfony\Component\Process\Process;
 
 class InsertInitalData extends Command
 {
@@ -37,6 +38,10 @@ class InsertInitalData extends Command
      */
     public function handle()
     {
-        //
+        $db = $this->argument("db");
+        $password = $this->argument("password");
+        $sql = 'insert into ';
+        $process = new Process(['mysql','-u future_admin', '-p' . $password, '-e\'' . $sql . ';\'']);
+        $process->run();
     }
 }
