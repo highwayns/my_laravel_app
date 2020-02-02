@@ -13,7 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\CopySource::class,
+        Commands\CreateDatabase::class,
+        Commands\InsertInitalData::class,
+        Commands\ModifySource::class
     ];
 
     /**
