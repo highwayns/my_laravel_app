@@ -12,7 +12,7 @@ class InsertInitalData extends Command
      *
      * @var string
      */
-    protected $signature = 'command:InsertInitalData';
+    protected $signature = 'command:InsertInitalData {db} {password}';
 
     /**
      * The console command description.

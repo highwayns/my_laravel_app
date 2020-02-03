@@ -12,7 +12,7 @@ class CopySource extends Command
      *
      * @var string
      */
-    protected $signature = 'command:CopySource';
+    protected $signature = 'command:CopySource {source} {dest}';
 
     /**
      * The console command description.
@@ -40,7 +40,9 @@ class CopySource extends Command
     {
         $source = $this->argument("source");
         $dest = $this->argument("dest");
-        $process = new Process(['cp', $source, $dest]);
+        //$process = new Process(['xcopy', $source, $dest, '/D /E /R /Y /I /K']);
+        $process = new Process(['cp', '-a', $source, $dest]);
+        $process->setTimeout(10*60);
         $process->run();
     }
 }

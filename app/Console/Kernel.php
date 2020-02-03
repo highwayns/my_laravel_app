@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\CopySource::class,
         Commands\CreateDatabase::class,
+        Commands\ImportData::class,
         Commands\InsertInitalData::class,
         Commands\ModifySource::class
     ];
