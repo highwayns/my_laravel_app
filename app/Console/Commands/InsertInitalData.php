@@ -12,7 +12,7 @@ class InsertInitalData extends Command
      *
      * @var string
      */
-    protected $signature = 'command:InsertInitalData {db} {password}';
+    protected $signature = 'command:InsertInitalData {db} {password} {vendor_id}';
 
     /**
      * The console command description.
@@ -40,7 +40,8 @@ class InsertInitalData extends Command
     {
         $db = $this->argument("db");
         $password = $this->argument("password");
-        $sql = 'insert into ';
+        $vendor_id = $this->argument("vendor_id");
+        $sql = 'insert into company' . $vendor_id;
         $process = new Process(['mysql','-u future_admin', '-p' . $password, '-e\'' . $sql . ';\'']);
         $process->run();
     }

@@ -30,4 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+/*
+Route::get('/', function () {
+    return view('welcomeshop');
+})->middleware(['auth.shop'])->name('home');
+*/
