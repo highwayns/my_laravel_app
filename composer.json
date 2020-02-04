@@ -13,6 +13,7 @@
         "laravel-frontend-presets/argon": "^1.0",
         "laravel/cashier": "^10.5",
         "laravel/framework": "^6.2",
+        "laravel/horizon": "^3.5",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "ohmybrew/laravel-shopify": "^10.3",
