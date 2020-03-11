@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Auth::routes();
 
@@ -27,11 +30,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-/*
-Route::get('/', function () {
+Route::get('/shopify', function () {
     return view('welcomeshop');
 })->middleware(['auth.shop'])->name('home');
-*/

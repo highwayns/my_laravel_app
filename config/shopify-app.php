@@ -17,7 +17,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This option option allows you to use:
-    | `php artisan vendor:publish --tag=shopify-migrations` to push migrations
+    | `php artisan vendor:publish --tag=migrations` to push migrations
     | to your app's folder so you're free to modify before migrating.
     |
     */
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'app_name' => env('SHOPIFY_APP_NAME', 'Shopify App'),
+    'app_name' => env('SHOPIFY_APP_NAME', 'Highwaydrags'),
 
     /*
     |--------------------------------------------------------------------------
@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'api_key' => env('SHOPIFY_API_KEY', ''),
+    'api_key' => env('SHOPIFY_API_KEY', 'a99bfd2922cffd558ae20079c57b78c3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +131,7 @@ return [
     |
     */
 
-    'api_secret' => env('SHOPIFY_API_SECRET', ''),
+    'api_secret' => env('SHOPIFY_API_SECRET', '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'),
 
     /*
     |--------------------------------------------------------------------------
@@ -233,7 +233,7 @@ return [
     |
     */
 
-    'myshopify_domain' => env('SHOPIFY_MYSHOPIFY_DOMAIN', 'myshopify.com'),
+    'myshopify_domain' => env('SHOPIFY_MYSHOPIFY_DOMAIN', 'highwaydrags.myshopify.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -282,11 +282,11 @@ return [
     */
 
     'webhooks' => [
-        /*
             [
-                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://some-app.com/webhook/orders-create')
+                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'http://localhost:8000/webhook/app-uninstalled')
             ],
+        /*
             ...
         */
     ],
